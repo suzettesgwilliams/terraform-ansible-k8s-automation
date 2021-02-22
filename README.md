@@ -6,6 +6,7 @@ We are using terraform for provisioning the intrstructure which include; VPC, In
 # Create a REDHAT EC2 instance in aws cloud and assigned IAM roles
 AmazonEC2FullACCESS
 AmazonVPCFullACCESS
+AMazonS3Full Access
 $ sudo useradd ansible
 $ echo "ansible  ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/ansible
 $ sudo su - ansible
@@ -22,7 +23,7 @@ $ pip3 install boto3 --user
 ### Terraform Installation
 
 ``` sh
-$ sudo su ansible
+$ sudo su - ansible
 $ sudo yum install wget unzip -y
 $ wget https://releases.hashicorp.com/terraform/0.12.26/terraform_0.12.26_linux_amd64.zip
 $ sudo unzip terraform_0.12.26_linux_amd64.zip -d /usr/local/bin/
